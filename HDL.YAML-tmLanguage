@@ -1,0 +1,33 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: HDL
+scopeName: source.HDL
+fileTypes: [hdl]
+uuid: 014d3d76-42a7-4efb-8ad1-1465c3a77321
+
+patterns:
+- name: comment.block
+  begin: /\*
+  end: \*/
+  comment: multiline comments
+
+- name: comment.line.double-slash
+  match: \/\/.*
+  comment: single line double slash comments
+
+- name: entity.name.function
+  match: \w{1,32}(?=\()
+  comment: function names
+
+- name: constant.numeric
+  match: (?<=\W)\d*(?=\W)
+  comment: numbers
+
+- name: storage.type
+  match: (CHIP|PARTS|BUILTIN|CLOCKED)
+
+- name: variable.parameter
+  match: (IN|OUT)
+
+- name: keyword.operator
+  match: (\=|\.\.)

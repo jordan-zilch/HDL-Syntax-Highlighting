@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>hdl</string>
+	</array>
+	<key>name</key>
+	<string>HDL</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>comment</key>
+			<string>multiline comments</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.block</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>single line double slash comments</string>
+			<key>match</key>
+			<string>\/\/.*</string>
+			<key>name</key>
+			<string>comment.line.double-slash</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>function names</string>
+			<key>match</key>
+			<string>\w{1,25}(?=\()</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>numbers</string>
+			<key>match</key>
+			<string>(?&lt;=\W)\d*(?=\W)</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(CHIP|PARTS|BUILTIN|CLOCKED)</string>
+			<key>name</key>
+			<string>storage.type</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(IN|OUT)</string>
+			<key>name</key>
+			<string>variable.parameter</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\=|\.\.)</string>
+			<key>name</key>
+			<string>keyword.operator</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.HDL</string>
+	<key>uuid</key>
+	<string>014d3d76-42a7-4efb-8ad1-1465c3a77321</string>
+</dict>
+</plist>
